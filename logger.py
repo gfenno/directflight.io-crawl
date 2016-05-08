@@ -5,6 +5,7 @@ additional objects to the logging stream
 """
 import logging
 
+logging.getLogger("requests").setLevel(logging.WARNING)
 def setup():
     """Returns initial object that can be called to create a logging stream
     """
@@ -15,7 +16,7 @@ def setup():
     stream_handler = logging.StreamHandler()
     stream_handler.setFormatter(stream_formatter)
 
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
     logger.addHandler(stream_handler)
 
     return logger
